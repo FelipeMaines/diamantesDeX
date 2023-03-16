@@ -5,9 +5,17 @@ namespace diamanteImpares
     {
         static void Main(string[] args)
         {
-            Console.Write("Digite a altura da pirâmide: ");
-            int altura = int.Parse(Console.ReadLine());
-            int espaco = altura - 1;
+
+            int altura;
+            do {
+
+                Console.Write("Digite a altura da pirâmide (numero impar): ");
+                altura = int.Parse(Console.ReadLine()); 
+
+            } while(altura % 2 != 1);
+
+
+            int espaco = (altura - 1) / 2;
             int xis = 1; //yx
 
             for (int i = 0; i < altura; i++)
@@ -24,7 +32,7 @@ namespace diamanteImpares
 
                 Console.WriteLine();
 
-                if (i < altura / 2)
+                if (i < (altura - 1) / 2)
                 {
                     espaco--;
                     xis += 2;
